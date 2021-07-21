@@ -17,7 +17,8 @@ client.username_pw_set(username=MQTT_USERNAME, password=MQTT_PASSWORD)
 client.connect(MQTT_BROKER)
 
 
-def task(sensor_id: int, min_value: int, max_value: int):
+def generateSensorValue(sensor_id: int, min_value: int, max_value: int):
+    print("-------- MQTT Mise à jour du capteur %s --------" % sensor_id)
     for node in NODE_ID:
         MQTT_TOPIC = GROUPNAME + "/" + node + "/" + str(sensor_id)
         MQTT_MSG = json.dumps({
@@ -29,25 +30,25 @@ def task(sensor_id: int, min_value: int, max_value: int):
             }
         })
         client.publish(MQTT_TOPIC, MQTT_MSG)
-        print("MQTT Mis à jour - Node %s Timestamp : %s" % (node, int(time.time())))
+        # print("NODE_ID %s Timestamp : %s" % (node, int(time.time())))
 
 
 def run():
-    while datetime.now().minute not in {0, 1, 2, 3, 5, 6, 7, 8, 9, 7, 8, 9, 10, 15, 20, 25, 30, 34, 35, 38, 39, 40, 41, 42, 44, 45, 50, 58, 59, 55}:
+    while datetime.now().minute not in {0, 1, 2, 3,4, 5, 6, 7, 8, 9, 7, 8, 9, 10, 15, 20, 25, 29, 30, 31, 34, 35, 38, 39, 40, 41, 42, 44, 45, 49, 50, 53, 54, 58, 59, 55}:
         sleep(1)
 
-    task(112, 23, 29)
-    task(114, 0, 100)
-    task(122, 0, 50)
-    task(107, 0, 150)
-    task(121, 0, 200000)
+    generateSensorValue(112, 23, 29)
+    generateSensorValue(114, 0, 100)
+    generateSensorValue(122, 0, 20)
+    generateSensorValue(107, 0, 150)
+    generateSensorValue(121, 0, 200000)
     while True:
         sleep(60 * 15)
-        task(112, 23, 29)
-        task(114, 0, 100)
-        task(122, 0, 50)
-        task(107, 0, 150)
-        task(121, 0, 200000)
+        generateSensorValue(112, 23, 29)
+        generateSensorValue(114, 0, 100)
+        generateSensorValue(122, 0, 50)
+        generateSensorValue(107, 0, 150)
+        generateSensorValue(121, 0, 200000)
 
 
 run()
