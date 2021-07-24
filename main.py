@@ -34,7 +34,7 @@ def generateSensorValue(sensor_id: int, min_value: int, max_value: int):
 
 
 def run():
-    while datetime.now().minute not in {0, 1, 2, 3,4, 5, 6, 7, 8, 9, 7, 8, 9, 10, 15, 20, 25, 29, 30, 31, 34, 35, 38, 39, 40, 41, 42, 44, 45, 49, 50, 53, 54, 58, 59, 55}:
+    while datetime.now().minute not in {0, 2, 4, 6, 8, 10, 12, 14, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58 }:
         sleep(1)
 
     generateSensorValue(112, 23, 29)
