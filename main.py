@@ -40,13 +40,13 @@ def run():
     generateSensorValue(114, 25, 100) # humidite
     generateSensorValue(122, 0, 200) # compteur personne
     generateSensorValue(107, 0, 70) # bruit
-    generateSensorValue(121, 0, 200000) # lumiere
+    generateSensorValue(121, 0, 1500) # lumiere
     while True:
         sleep(120)
         generateSensorValue(112, 23, 29) # temp
         generateSensorValue(114, 25, 100) # humidite
         generateSensorValue(122, 0, 200) # compteur personne
         generateSensorValue(107, 0, 70) # bruit
-        generateSensorValue(121, 0, 200000) # lumiere
+        generateSensorValue(121, 0, 1500) # lumiere
 
 run()
