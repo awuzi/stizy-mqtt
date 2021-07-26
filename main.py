@@ -36,17 +36,17 @@ def run():
     while datetime.now().minute not in {0, 2, 4, 6, 8, 10, 12, 14, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58 }:
         sleep(1)
 
-    generateSensorValue(112, 23, 29)
-    generateSensorValue(114, 0, 100)
-    generateSensorValue(122, 0, 20)
-    generateSensorValue(107, 0, 150)
-    generateSensorValue(121, 0, 200000)
+    generateSensorValue(112, 23, 29) # temp
+    generateSensorValue(114, 25, 100) # humidite
+    generateSensorValue(122, 0, 200) # compteur personne
+    generateSensorValue(107, 0, 70) # bruit
+    generateSensorValue(121, 0, 200000) # lumiere
     while True:
         sleep(120)
-        generateSensorValue(112, 23, 29)
-        generateSensorValue(114, 0, 100)
-        generateSensorValue(122, 0, 50)
-        generateSensorValue(107, 0, 150)
-        generateSensorValue(121, 0, 200000)
+        generateSensorValue(112, 23, 29) # temp
+        generateSensorValue(114, 25, 100) # humidite
+        generateSensorValue(122, 0, 200) # compteur personne
+        generateSensorValue(107, 0, 70) # bruit
+        generateSensorValue(121, 0, 200000) # lumiere
 
 run()
