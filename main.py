@@ -6,10 +6,10 @@ from time import sleep
 
 import paho.mqtt.client as mqtt
 
-GROUPNAME = "WEB3-GROUPE10"
-MQTT_BROKER = "hetic.arcplex.fr"
-MQTT_USERNAME = "GROUPE10"
-MQTT_PASSWORD = "14991799"
+GROUPNAME = "#########"
+MQTT_BROKER = "#########"
+MQTT_USERNAME = "#########"
+MQTT_PASSWORD = "#########"
 # un ID différent par Node
 NODE_ID = ["12345678", "7654321", "987654543", "58381714", "13960537", "68191831", "54158491", "69607072", "51488201", "22361595", "24114793", "62061965", "73214383", "60052006", "94981317"]
 
